@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.pai{
+    height: 100vh;  
+}
+.Linha1{
+    height: 33.3%;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: space-between;
+    height: 33.3%;
+}
+.quadrado{
+    background-color: rgb(71, 71, 248);
+    height: 100%;
+    width: 300px;
+    
+}
+.Laranja1{
+    background-color: rgb(255, 145, 0);
+    height: 100%;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+

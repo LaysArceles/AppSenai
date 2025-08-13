@@ -1,0 +1,273 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, rgb(106, 0, 155), black);
+  color: white;
+}
+
+/* CabeĆ§alho com menu hamburguer */
+.navbar {
+  background-color: #8d15c5;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.logo {  
+
+    width: 50px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  justify-self:auto;
+
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f0e6ff;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo principal */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CartĆµes */
+.cartao {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* TĆ­tulos centralizados */
+h1, h2 {
+  text-align: center;
+}
+
+.certificaĆ§Ć£o {
+  text-justify: center;
+}
+
+/* Projetos */
+.conteiner-proj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.cont-proj2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.proj1,
+.proj2 {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Lista extra */
+#extras ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista {
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.lista li {
+  margin-bottom: 10px;
+}
+
+/* Sobre mim */
+.sobre-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sobre-img img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Ć¨cones de habilidades */
+.icones-habilidades {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 3rem;
+  padding-top: 10px;
+}
+
+.icones-habilidades i {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.icones-habilidades i:hover {
+  color: #c13deb;
+}
+
+/* Ć¨cones sociais */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #850ab6;
+}
+
+/* RodapĆ© */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #8d15c5;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .cartao {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .sobre-texto {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .sobre-img img {
+    max-width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .cont-proj2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proj1, .proj2 {
+    width: 100%;
+    min-width: auto;
+    text-align: center;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  footer {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+  
+  
