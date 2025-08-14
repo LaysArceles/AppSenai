@@ -16,6 +16,16 @@
     justify-content: space-between;
     height: 33.3%;
 }
+.conteiner2{
+    display: flex;
+    justify-content: space-between;
+    height: 33.3%;
+}
+.conteiner3{
+    display: flex;
+    justify-content: space-between;
+    height: 99.3%;
+}
 .quadrado{
     background-color: rgb(71, 71, 248);
     height: 100%;
@@ -25,9 +35,10 @@
 .Laranja1{
     background-color: rgb(255, 145, 0);
     height: 100%;
-    width: 150px;
+    width: 100px;
     justify-content: center;
     align-items: center;
+    position: static;
 }
 
 

@@ -1,0 +1,42 @@
+body{
+    background: #2c80b0;
+    background: linear-gradient(232deg, rgba(44, 128, 176, 1) 2%, rgba(91, 41, 217, 1) 24%, rgba(95, 50, 150, 1) 50%, rgba(168, 87, 222, 1) 74%, rgba(181, 47, 177, 1) 100%);
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+}
+.nav-Cabeçalho{
+    background-color: rgb(171, 145, 231);
+    color: rgb(81, 228, 142);
+    display: flex;
+    justify-content: space-between;
+    padding:15px 20px;
+    position: relative;
+}
+.cartao{
+    display: flexbox;
+    background-color: rgba(197, 52, 202, 0.514);
+    border:1px solid rgb(156, 69, 255);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    width: 90%;
+    
+}
+.img{
+    height: 400px;
+    width: 50%;
+}
+main{
+    font-family: Georgia, serif;
+}
+.rodape{
+    width: 100%;
+    height:100px ;
+    background-color:rgb(191, 170, 238) ;
+}
+
