@@ -1,0 +1,17 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.Redondo{
+    display: flex;
+    height: 350px;
+    width: 25%;
+    border-radius: 350px;
+}
+.ok{
+    background-color: black;
+}
+.bad{
+    background-color: rgb(2, 0, 255);
+}
