@@ -27,6 +27,16 @@ body{
     width: 90%;
     
 }
+.cartao2{
+    display: inline-block;
+    background-color: rgba(197, 52, 202, 0.514);
+    border:1px solid rgb(156, 69, 255);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    width: 90%;
+}
 .img{
     height: 400px;
     width: 50%;
