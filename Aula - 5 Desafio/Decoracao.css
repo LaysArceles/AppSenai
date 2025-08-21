@@ -1,0 +1,43 @@
+
+body{
+    background-color: rgb(230, 215, 243);
+    height: 130vh;
+}
+main{
+ font-family:Georgia, serif;
+}
+.Cartao {
+    display: flexbox;
+   
+    background-color: rgba(170, 108, 233, 0.712);
+    border:1px,solid rgb(99, 6, 175);
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 500px;
+    min-height: 300px;
+}
+.Texto{
+    font-family: Georgia, serif;
+    padding: 10px;
+}
+#Caixinha{
+    padding: 5px;
+    border:1px,solid rgb(99, 6, 175);
+    border-radius: 10px;
+
+}
+#Adds{
+    background-color: rgb(213, 184, 240);
+    padding: 4px;
+    border-radius: 7px;
+}
+.Caixa{
+    padding: 5px;
+
+}
+#Lista {
+    font-family: cursive;
+    font-style: initial;
+}
+
+

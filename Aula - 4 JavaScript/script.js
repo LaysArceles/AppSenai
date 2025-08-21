@@ -30,7 +30,7 @@
 // console.log(sub(4, 5));
 // console.log(somar(6, 4));
 
-// let title = document.getElementById('EL1').innerHTML;// só o elemento e sem e o tudo
+// let title = document.getElementById('EL1').innerHTML;// só o elemento e sem e o texto
 // console.log(title);
 
 // const ReceberTexto = () =>{
