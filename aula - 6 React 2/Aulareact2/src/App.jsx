@@ -2,21 +2,37 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { HelloWorld } from './assets/helloWorld'
+// import { HelloWorld } from './assets/helloWorld'
 import { Somar } from './assets/somar'
 import { Sub } from './assets/Subtrair'
+import{BlueSquare} from './components/BlueSquare.jsx'
+import { RedSquare } from './components/RedSquare.jsx'
+import { YellowSquare } from './components/YellowSquare.jsx'
+import { Square } from './components/Square.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
+  const [texto,setTexto] = useState("")
 
   return (
     <>
-    <HelloWorld/>
-    <input type="digite um numero" />
+    {/* <HelloWorld/> */}
+    {/* <input type="digite um numero" />
     <Somar x y /><Somar/>
-    <Sub x y /> 
-    
+    <Sub x y />  */}
+    {/* <BlueSquare/> 
+    <RedSquare/>
+    <YellowSquare/> */}
+    <h1>Sinaleiro Para Fefita</h1>
+    <Square classe="Blue" ></Square>
+    <Square classe="Red" ></Square>
+    <Square classe="Roxo" ></Square>
 
+    <button onClick={() => setCount((count) => count + 2)}> Count is {count} </button>
+    
+    <input type="text" onChange={(e) => setTexto(e.target.value)} />
+    <h1>{texto}</h1>
     {/* <h1>Hello World!!</h1> */}
       {/* <div>
         <a href="https://vite.dev" target="_blank">
