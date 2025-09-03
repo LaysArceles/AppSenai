@@ -4,6 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+.cartao{
+  background-color: rgba(186, 76, 230, 0.555);
+  padding: 10px;
+  border-radius: 30px;
+  margin: 10px;
+  width: 1000px;
+  height: auto;
+}
 
 .logo {
   height: 6em;
