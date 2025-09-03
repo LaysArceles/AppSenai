@@ -7,6 +7,14 @@ function App() {
   const [visibilty, setvisibility] = useState(true)
   const [color,setColor] = useState("rebeccapurple")
   const [Count,setCount] = useState(0)
+  const [DeCount, setDeCount] = useState(0)
+
+  const IncrementaDec = () => {
+    setCount (Count => Count + 1 )
+    if (Count % 10 === 0){
+      setDeCount(DecCount => DecCount + 1)
+    }
+  }
 
   return (
     <>
@@ -34,19 +42,17 @@ function App() {
     </div>
 
       <div className= 'cartao'>
-    <div>
+        <div>
           <h1>O que é Festa?</h1>
       <p>Festa é um evento social organizado com o propósito de celebrar, confraternizar ou marcar uma ocasião especial. Ela pode variar muito em tamanho, estilo e finalidade, indo desde pequenas reuniões familiares até grandes eventos públicos. As festas geralmente envolvem uma série de elementos como música, dança, comida, bebidas, decoração temática e atividades recreativas que promovem a interação e o entretenimento dos participantes.
         As festas podem ter diferentes motivações, como comemorar aniversários, casamentos, feriados religiosos ou civis, conquistas pessoais e profissionais, rituais culturais, festivais tradicionais, entre outros. Elas funcionam como um momento de lazer, socialização e fortalecimento dos laços entre amigos, familiares e comunidades.
         Além do aspecto festivo, as festas também desempenham um papel cultural importante, refletindo costumes, tradições e valores de uma sociedade. Elas são uma forma de expressão coletiva e ajudam na transmissão de identidade cultural entre gerações.</p>
       </div>
-       <button onClick={() => {setCount(Count => Count += 1)}}>Count {Count}</button>  
-    </div>
-
-
-      
-    </>
-  )
+       <button onClick={IncrementaDec}> Count {DeCount}</button>  
+      </div>   
+    
+  </>
+);
 }
 
 export default App
