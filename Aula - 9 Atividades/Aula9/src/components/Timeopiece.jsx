@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const Timepiece = () => {
   const [time, setTime] = useState(0);
+  const [finished, setFinished] = useState(false);
   const inputSecs = useRef(null);
   const inputMins = useRef(null);
   const intervalRef = useRef(null);
@@ -14,7 +15,8 @@ export const Timepiece = () => {
       (!isNaN(secValue) && secValue >= 0 && secValue < 60) &&  
       (!isNaN(minValue) && minValue >= 0 && minValue <= 60)
     ) {
-      setTime(minValue * 60 + secValue); 
+      setTime(minValue * 60 + secValue);
+      setFinished(false); // reinicia o estado finished
     }
   };
 
@@ -28,6 +30,8 @@ export const Timepiece = () => {
         setTime((prevTime) => {
           if (prevTime <= 1) {
             clearInterval(intervalRef.current);
+            // Mostra 00:00 primeiro e depois muda para "Tempo esgotado"
+            setTimeout(() => setFinished(true), 1000);
             return 0;
           }
           return prevTime - 1;
@@ -44,9 +48,11 @@ export const Timepiece = () => {
   return (
     <div>
       <div className="clock">
-        {mins.toString().padStart(2, "0")}:
-        {secs.toString().padStart(2, "0")}
+        {finished
+          ? "⏰ Tempo esgotado!"
+          : `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`}
       </div>
+
       <div className="Cronos">
         <input ref={inputMins} type="number" min="0" placeholder="Minutos" />
         <input ref={inputSecs} type="number" min="0" max="59" placeholder="Segundos" />
@@ -55,3 +61,4 @@ export const Timepiece = () => {
     </div>
   );
 };
+
