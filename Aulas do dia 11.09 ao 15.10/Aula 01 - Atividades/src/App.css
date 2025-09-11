@@ -17,6 +17,12 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.Cartao{
+  height: auto;
+  width: 600px;
+  background-color: rgba(131, 19, 243, 0.822);
+  border-color: rgb(63, 6, 119);
+}
 
 @keyframes logo-spin {
   from {
