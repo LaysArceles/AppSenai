@@ -1,3 +1,16 @@
 npm create vite@latest
 npm install
 npm run dev 
+
+
+npm install tailwindcss @tailwindcss/vite
+---> pasta vite 
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+tira tudo do css e colocar 
+@import "tailwindcss";
