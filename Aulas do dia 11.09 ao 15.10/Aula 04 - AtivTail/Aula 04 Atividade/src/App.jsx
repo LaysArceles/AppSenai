@@ -4,32 +4,108 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='h-screen '>
+        <div className=' h-1/3 flex justify-between ' >
+
+          <div className=' w-62 h-62 bg-purple-800'>
+
+              <div className=' h-1/3 flex justify-center ' >
+                <div className='w-20 h20 bg-purple-400'></div></div>
+              <div className=' h-1/3 flex justify-center ' ></div>
+              <div className=' h-1/3 flex justify-center ' >
+                <div className='w-20 h20 bg-purple-400'></div></div>
+
+          </div>
+            {/* ========================================================================= */}
+
+          <div className=' w-62 h-62 bg-purple-800'>
+
+              <div className=' h-1/3 flex justify-center ' />
+              <div className=' h-1/3 flex justify-center ' >
+                <div className='w-20 h20 bg-purple-400'></div></div>
+              <div className=' h-1/3 flex justify-center ' />
+
+          </div>
+          {/* ===================================================================================== */}
+
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-baseline '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-center ' />
+            <div className=' h-1/3 flex justify-end-safe '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+          </div>
+          {/* ===================================================================================== */}
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-baseline '/>
+            <div className=' h-1/3 flex justify-center ' />
+            <div className=' h-1/3 flex justify-center '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+          </div>
+        </div>
+        {/* ===================================================================================== */}
+
+        <div className='h-1/3 flex justify-between ' >
+          <div className=' w-62 h-62 bg-purple-800'>
+
+            <div className=' h-1/3 flex justify-center '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-baseline '/>
+            <div className=' h-1/3 flex justify-center ' />
+          </div>
+           {/* ===================================================================================== */}
+
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-center '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-baseline '>
+              <div className='w-25 h20 bg-purple-400'></div>
+              <div className='w-25 h20'></div>
+              <div className='w-25 h20 bg-purple-400'></div>
+              </div>
+            <div className=' h-1/3 flex justify-center '>
+           <div className='w-20 h20 bg-purple-400'></div></div>
+          </div>
+           {/* ===================================================================================== */}
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-center '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-baseline '/>
+            <div className=' h-1/3 flex justify-center ' />
+          </div>
+        </div>
+         {/* ===================================================================================== */}
+        <div className='h-1/3 flex justify-between ' >
+          <div className=' w-62 h-62 bg-purple-800'>
+            
+            <div className=' h-1/3 flex justify-end-safe '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-center ' />
+            <div className=' h-1/3 flex justify-baseline '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+          </div>
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-center ' />
+              <div className=' h-1/3 flex justify-center ' >
+                <div className='w-20 h20 bg-purple-400'></div></div>
+              <div className=' h-1/3 flex justify-center ' />
+          </div>
+          <div className=' w-62 h-62 bg-purple-800'>
+            <div className=' h-1/3 flex justify-end '>
+              <div className='w-20 h20 bg-purple-400'></div></div>
+            <div className=' h-1/3 flex justify-baseline '/>
+            <div className=' h-1/3 flex justify-center ' />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+
     </>
   )
 }
 
 export default App
+ 
