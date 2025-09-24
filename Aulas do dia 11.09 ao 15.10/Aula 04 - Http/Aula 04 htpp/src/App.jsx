@@ -14,11 +14,14 @@ function App() {
   const getDogs = async() =>
   {
     const response = await axios.get('https://dog.ceo/api/breeds/image/random')
-    console.log(response)
+    setDog(response.data)
   }
   return (
     <>
+     <div className='h-screen flex justify-center '>
+        <img src = {dog.message} alt=""></img>
       
+     </div>
     </>
   )
 }
