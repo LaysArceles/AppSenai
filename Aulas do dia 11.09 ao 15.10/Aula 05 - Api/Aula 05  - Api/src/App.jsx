@@ -1,27 +1,40 @@
 import { use, useEffect, useState } from 'react'
 import './App.css'
-import axios from 'axios'
+
+import List from './pages/list'
+import { Profile } from './pages/profile'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
 function App() {
- const [User,setUsers] = useState([])
-
- useEffect (()=>{
-  getUser();
- },[])
-
-  const getUser = async() =>
-  {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-    console.log(response.data)
-    setUsers(response.data[9])
-  }
   return (
     <>
-        {
-          User.map(user =>(
-            <li key={user.id}>{user.name}</li>
-          ))
-        }
+         <BrowserRouter>
+              <nav>
+                <div className='flex justify-center items-center w-full h-20 bg-purple-950 text-purple-300'>
+                    <Link to={'/'}>
+                    <h1>
+                    Home
+                    </h1>
+                    </Link>
+                  </div>
+                 
+              </nav>
+                    <div className='h-screen'>
+                  <div className='flex justify-center '>
+                    <div className='text-blue-700 bg-black '></div>
+              <Routes>
+
+                <Route path='/' element={<List/>} ></Route>
+
+                
+                    <Route path='/:ID'element ={<Profile/>}>
+                    </Route> 
+        
+              </Routes>
+                </div>
+                  </div>
+            </BrowserRouter>  
+
     </>
   )
 }
