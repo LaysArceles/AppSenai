@@ -17,6 +17,7 @@ export const Carts = () =>{
         Navigate('/',{state: {carts}})
     }
     return(
+
         <ul>
 
                 {carts
@@ -27,8 +28,9 @@ export const Carts = () =>{
                     onClick={()=>openCrarts(carts)}
                     style={{cursor:'pointer',}}
                     >
-                    <div className=" items-center m-3 border-4 border-amber-950">
-                     <img src={carts.image} alt="" />
+                    <div className="flex justify-center flex-col items-center m-3 border-4 border-amber-950 ">
+
+                     <img  className="w-50 h-50 object-cover" src={carts.image} alt=""  height={50}/>
                      <div>
 
                      {carts.name}
