@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
+
 export const Carts = () =>{
     const [carts,SetCarts] = useState([]);
     useEffect(()=>{
@@ -17,9 +18,9 @@ export const Carts = () =>{
         Navigate('/',{state: {carts}})
     }
     return(
+        
 
         <ul>
-
                 {carts
                 .filter (carts => carts.image)
                 .map(carts=>(
