@@ -7,12 +7,12 @@ export const Persona = () =>
     if (!slide ) return <p>Nenhum Cart Selecionando.</p>
     return(
         <div className="justify-center items-center-safe"> 
-            <h2>{slide .name}</h2>
-            <img src={slide .image} alt="" />
-            <p>house: {slide .house}</p>
-            <p>Date of birth: {slide .dateOfBirth}</p>
-            <p>ancestry: {slide .ancestry}</p>
-            <p>patronus: {slide .patronus}</p>
+            <h2>{slide.name}</h2>
+            <img src={slide.image} alt="" />
+            <p>house: {slide.house}</p>
+            <p>Date of birth: {slide.dateOfBirth}</p>
+            <p>ancestry: {slide.ancestry}</p>
+            <p>patronus: {slide.patronus}</p>
         </div>
     )
 }

@@ -8,7 +8,7 @@ export function Carousel({ slides, options }) {
   const navigate = useNavigate();          
 
   const handleClick = (slide) => {
-   navigate('/Persona', { state: { Persona: slide } });
+   navigate('/Persona', { state: { slide } });
   };
 
   return (
