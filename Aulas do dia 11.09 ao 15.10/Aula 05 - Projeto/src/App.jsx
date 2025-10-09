@@ -24,14 +24,13 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <div className='flex w-full h-20 bg-red-900'>
-          <img src={Logo} alt="Harry_Potter_wordmark.svg" />
-          <div className='flex justify-center w-full h-20 bg-red-900'>
+          
+          <div className='flex justify-center w-full h-50 bg-red-950'>
             <div className='flex justify-center'>
-              <div className='text-purple-50 text-4xl'>
-                <Link to={"/"}><h1>Home</h1></Link>
-              </div>
-            </div>
+                <Link to={"/"}>
+                <div className='flex w-full h-30 justify-center bg-red-950'>
+                <img src={Logo} alt="Harry_Potter_wordmark.svg" />
+                </div></Link>
           </div>
         </div>
       </nav>
