@@ -14,3 +14,8 @@ export default defineConfig({
 })
 tira tudo do css e colocar 
 @import "tailwindcss";
+
+
+React Navaget
+npx create-expo-app@latest
+npm run dev 
