@@ -1,14 +1,29 @@
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import {getAuth} from 'firebase/auth';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import {app} from '../firebaseConfig';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomeScreen() {
   const [Email,setEmail] = useState("");
   const [Password,setPassword] = useState("");
   const [ConfirmPassword,setConfirmPassword] = useState("");
+
+  useEffect(()=>{
+    console.log(Email,Password,ConfirmPassword)
+  },[Email,Password,ConfirmPassword])
+ 
   const auth = getAuth(app)
+  const sigup=()=>{
+    if (Password === ConfirmPassword){
+      createUserWithEmailAndPassword(auth,Email,Password)
+    }
+    else{
+      return alert("Erro!")
+    }
+
+  }
   return (
+    // ======================================= LONGIN ==========================================
     // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     //   <View style={{ height: '10%' }}>
     //     <Text style={styles.halla}> Halla</Text>
@@ -56,6 +71,9 @@ export default function HomeScreen() {
     //     <View style={styles.Bigcircle}></View>
     //   </View>
     // </View>
+    //
+    // =================================== Register ===================================================
+    //
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View style={{ height: '10%' }}>
         <Text style={styles.halla}> Halla</Text>
@@ -64,29 +82,16 @@ export default function HomeScreen() {
         <View style={styles.titulo}>
           <Text style={styles.titulo2} > Welcome!</Text>
         </View>
-        <TextInput style={styles.Caixa} placeholder="  Email"></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Password"></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Confirm Password"></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Email" onChangeText={(value)=> setEmail(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Password" secureTextEntry onChangeText={(value)=> setPassword(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Confirm Password"secureTextEntry onChangeText={(value)=> setConfirmPassword(value)}></TextInput>
 
-        <TouchableOpacity style={styles.Botao}>
+        <TouchableOpacity style={styles.Botao} onPress={sigup}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text style={styles.login}>Register</Text>
+            <Text style={styles.login} >Register</Text>
           </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.botaoForgot}>
-          <View>
-            <Text style={styles.Forgot}> Forgot Password ?</Text>
-          </View>
-        </TouchableOpacity>
-
-        <View style={{ flexDirection: 'row', marginTop: 20 }}>
-          <Text style={styles.botaodont}>Don't have an account?</Text>
-          <TouchableOpacity>
-            <Text style={styles.botaoGoo}>Sign Up</Text>
           </TouchableOpacity>
 
-        </View>
         <View style={{ flexDirection: 'row', marginTop: 10, height: "15%" }}>
           <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
             <Image style={{ height: 30, width: 30, marginRight: 10}} source={require('../assets/images/google.png')}></Image>
