@@ -1,8 +1,61 @@
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-
+import {getAuth} from 'firebase/auth';
+import {app} from '../firebaseConfig';
+import { useState } from "react";
 
 export default function HomeScreen() {
+  const [Email,setEmail] = useState("");
+  const [Password,setPassword] = useState("");
+  const [ConfirmPassword,setConfirmPassword] = useState("");
+  const auth = getAuth(app)
   return (
+    // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //   <View style={{ height: '10%' }}>
+    //     <Text style={styles.halla}> Halla</Text>
+    //   </View>
+    //   <View style={{ height: '60%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //     <View style={styles.titulo}>
+    //       <Text style={styles.titulo2} > Welcome!</Text>
+    //     </View>
+    //     <TextInput style={styles.Caixa} placeholder="  Email"></TextInput>
+    //     <TextInput style={styles.Caixa} placeholder="  Password"></TextInput>
+
+    //     <TouchableOpacity style={styles.Botao}>
+    //       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    //         <Text style={styles.login}>Login</Text>
+    //       </View>
+    //     </TouchableOpacity>
+
+    //     <TouchableOpacity style={styles.botaoForgot}>
+    //       <View>
+    //         <Text style={styles.Forgot}> Forgot Password ?</Text>
+    //       </View>
+    //     </TouchableOpacity>
+
+    //     <View style={{ flexDirection: 'row', marginTop: 20 }}>
+    //       <Text style={styles.botaodont}>Don't have an account?</Text>
+    //       <TouchableOpacity>
+    //         <Text style={styles.botaoGoo}>Sign Up</Text>
+    //       </TouchableOpacity>
+
+    //     </View>
+    //     <View style={{ flexDirection: 'row', marginTop: 10, height: "15%" }}>
+    //       <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+    //         <Image style={{ height: 30, width: 30, marginRight: 10}} source={require('../assets/images/google.png')}></Image>
+    //         <Text style={styles.botaoGoo}>Google</Text>
+    //       </TouchableOpacity>
+
+    //       <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+    //         <Image style={{ height: 30, width: 30,borderRadius:50, marginLeft: 100 }} source={require('../assets/images/facee.jpg')}></Image>
+    //         <Text style={styles.botaoFace}>Facebook</Text>
+    //       </TouchableOpacity>
+    //     </View>
+    //   </View>
+    //   <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-end', height: "15%", position: 'absolute', bottom: -75 }}>
+    //     <View style={styles.Smallcircle}></View>
+    //     <View style={styles.Bigcircle}></View>
+    //   </View>
+    // </View>
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View style={{ height: '10%' }}>
         <Text style={styles.halla}> Halla</Text>
@@ -13,10 +66,11 @@ export default function HomeScreen() {
         </View>
         <TextInput style={styles.Caixa} placeholder="  Email"></TextInput>
         <TextInput style={styles.Caixa} placeholder="  Password"></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Confirm Password"></TextInput>
 
         <TouchableOpacity style={styles.Botao}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text style={styles.login}>Login</Text>
+            <Text style={styles.login}>Register</Text>
           </View>
         </TouchableOpacity>
 
