@@ -1,61 +1,61 @@
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, Dimensions, Alert } from "react-native";
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
-import {app} from '../firebaseConfig';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../firebaseConfig';
 import { useEffect, useState } from "react";
-import { router } from "expo-router";
-import swal  from "sweetalert2"
+import { Link, router } from "expo-router";
+import swal from "sweetalert2"
 import Swal from "sweetalert2";
 
 export default function HomeScreen() {
-  const [Email,setEmail] = useState("");
-  const [Password,setPassword] = useState("");
-  const [ConfirmPassword,setConfirmPassword] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+  const [ConfirmPassword, setConfirmPassword] = useState("");
 
-  useEffect(()=>{
-    console.log(Email,Password,ConfirmPassword)
-  },[Email,Password,ConfirmPassword])
- 
+  useEffect(() => {
+    console.log(Email, Password, ConfirmPassword)
+  }, [Email, Password, ConfirmPassword])
+
   const auth = getAuth(app)
 
-  const sigup= async()=>{
-    if (Password.length >= 6){
-        if (Password === ConfirmPassword){
-          try{
-            await createUserWithEmailAndPassword(auth,Email,Password)
-           Swal.fire({
-              icon: "success",
-              title :"Success",
-              text: "Cadastro com sucesso!",
-            });
-            return router.navigate('/login') 
-          }
-          catch(e){
-            return Swal.fire({
-              icon: "error",
-              title :"Error",
-              text: "Email já existe!" + e
-            })
-          }
+  const sigup = async () => {
+    if (Password.length >= 6) {
+      if (Password === ConfirmPassword) {
+        try {
+          await createUserWithEmailAndPassword(auth, Email, Password)
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Cadastro com sucesso!",
+          });
+          return router.navigate('/login')
         }
-        else{
-           return Swal.fire({
-              icon: "error",
-              title :"Error",
-              text: "As senhas não conhecidem!"
-            })
+        catch (e) {
+          return Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Email já existe!" + e
+          })
         }
+      }
+      else {
+        return Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "As senhas não conhecidem!"
+        })
+      }
     }
-    else{
-       return Swal.fire({
-              icon: "error",
-              title :"Error",
-              text: "Erro!"
-            })
+    else {
+      return Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Erro!"
+      })
     }
 
   }
   return (
-   
+
     //
     // =================================== Register ===================================================
     //
@@ -67,24 +67,31 @@ export default function HomeScreen() {
         <View style={styles.titulo}>
           <Text style={styles.titulo2} > Welcome!</Text>
         </View>
-        <TextInput style={styles.Caixa} placeholder="  Email" onChangeText={(value)=> setEmail(value)}></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Password" secureTextEntry onChangeText={(value)=> setPassword(value)}></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Confirm Password"secureTextEntry onChangeText={(value)=> setConfirmPassword(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Email" onChangeText={(value) => setEmail(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Password" secureTextEntry onChangeText={(value) => setPassword(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="  Confirm Password" secureTextEntry onChangeText={(value) => setConfirmPassword(value)}></TextInput>
 
         <TouchableOpacity style={styles.Botao} onPress={sigup}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <Text style={styles.login} >Register</Text>
           </View>
+        </TouchableOpacity>
+        
+        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+          <Text style={styles.botaodont}>Don't have an account?</Text>
+          <TouchableOpacity>
+            <Link href={'/login'} style={styles.botaoGoo}>Sign Up</Link>
           </TouchableOpacity>
 
+        </View>
         <View style={{ flexDirection: 'row', marginTop: 10, height: "15%" }}>
-          <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <Image style={{ height: 30, width: 30, marginRight: 10}} source={require('../assets/images/google.png')}></Image>
+          <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Image style={{ height: 30, width: 30, marginRight: 10 }} source={require('../assets/images/google.png')}></Image>
             <Text style={styles.botaoGoo}>Google</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <Image style={{ height: 30, width: 30,borderRadius:50, marginLeft: 100 }} source={require('../assets/images/facee.jpg')}></Image>
+          <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Image style={{ height: 30, width: 30, borderRadius: 50, marginLeft: 100 }} source={require('../assets/images/facee.jpg')}></Image>
             <Text style={styles.botaoFace}>Facebook</Text>
           </TouchableOpacity>
         </View>
@@ -127,7 +134,7 @@ const styles = StyleSheet.create({
   },
   botaoFace: {
     color: 'blue',
-    
+
   },
   botaodont: {
     marginRight: 10,

@@ -1,63 +1,76 @@
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image} from "react-native";
-
+import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../firebaseConfig';
+import { useEffect, useState } from "react";
+import { Link, router } from "expo-router";
+import Swal from "sweetalert2";
 
 export default function HomeScreen() {
- // ======================================= LONGIN ==========================================
-    
-    return(
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <View style={{ height: '10%' }}>
-        <Text style={styles.halla}> Halla</Text>
-      </View>
-      <View style={{ height: '60%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={styles.titulo}>
-          <Text style={styles.titulo2} > Welcome!</Text>
+    const [Email, setEmail] = useState("");
+    const [Password, setPassword] = useState("");
+    const auth = getAuth(app)
+
+    const signIn = async () => {
+        await signInWithEmailAndPassword(auth,Email,Password)
+        router.navigate('/home')
+    }
+
+    // ======================================= LONGIN ==========================================
+
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ height: '10%' }}>
+                <Text style={styles.halla}> Halla</Text>
+            </View>
+            <View style={{ height: '60%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <View style={styles.titulo}>
+                    <Text style={styles.titulo2} > Welcome!</Text>
+                </View>
+                <TextInput style={styles.Caixa} placeholder="  Email"></TextInput>
+                <TextInput style={styles.Caixa} placeholder="  Password"></TextInput>
+
+                <TouchableOpacity style={styles.Botao}>
+                    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                        <Link href={'/home'} style={styles.login}>Login</Link>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.botaoForgot}>
+                    <View>
+                        <Link href = { '/home'} style={styles.Forgot}> Forgot Password ?</Link>
+                    </View>
+                </TouchableOpacity>
+
+                <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                    <Text style={styles.botaodont}>Do you have an account?</Text>
+                    <TouchableOpacity>
+                        <Link href={'/home'} style={styles.botaoGoo}>Sign Up</Link>
+                    </TouchableOpacity>
+
+                </View>
+                <View style={{ flexDirection: 'row', marginTop: 10, height: "15%" }}>
+                    <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image style={{ height: 30, width: 30, marginRight: 10 }} source={require('../assets/images/google.png')}></Image>
+                        <Text style={styles.botaoGoo}>Google</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image style={{ height: 30, width: 30, borderRadius: 50, marginLeft: 100 }} source={require('../assets/images/facee.jpg')}></Image>
+                        <Text style={styles.botaoFace}>Facebook</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-end', height: "15%", position: 'absolute', bottom: -75 }}>
+                <View style={styles.Smallcircle}></View>
+                <View style={styles.Bigcircle}></View>
+            </View>
         </View>
-        <TextInput style={styles.Caixa} placeholder="  Email"></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Password"></TextInput>
 
-        <TouchableOpacity style={styles.Botao}>
-          <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text style={styles.login}>Login</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.botaoForgot}>
-          <View>
-            <Text style={styles.Forgot}> Forgot Password ?</Text>
-          </View>
-        </TouchableOpacity>
-
-        <View style={{ flexDirection: 'row', marginTop: 20 }}>
-          <Text style={styles.botaodont}>Don't have an account?</Text>
-          <TouchableOpacity>
-            <Text style={styles.botaoGoo}>Sign Up</Text>
-          </TouchableOpacity>
-
-        </View>
-        <View style={{ flexDirection: 'row', marginTop: 10, height: "15%" }}>
-          <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <Image style={{ height: 30, width: 30, marginRight: 10}} source={require('../assets/images/google.png')}></Image>
-            <Text style={styles.botaoGoo}>Google</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <Image style={{ height: 30, width: 30,borderRadius:50, marginLeft: 100 }} source={require('../assets/images/facee.jpg')}></Image>
-            <Text style={styles.botaoFace}>Facebook</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-end', height: "15%", position: 'absolute', bottom: -75 }}>
-        <View style={styles.Smallcircle}></View>
-        <View style={styles.Bigcircle}></View>
-      </View>
-    </View>
-    
     );
 }
 
-    const styles = StyleSheet.create({
-      Botao: {
+const styles = StyleSheet.create({
+    Botao: {
         display: 'flex',
         color: 'white',
         backgroundColor: '#e37e27',
@@ -66,34 +79,34 @@ export default function HomeScreen() {
         width: 340,
         margin: 5,
         textAlign: 'center'
-      },
-      botaoForgot: {
+    },
+    botaoForgot: {
         display: 'flex',
         color: '#e37e27',
         marginTop: 20,
         marginBottom: 20,
-      },
-      login: {
+    },
+    login: {
         fontWeight: '600',
         color: "#ffffff"
-      },
-      Forgot: {
+    },
+    Forgot: {
         color: '#e37e27',
         fontWeight: '500'
-      },
-      botaoGoo: {
+    },
+    botaoGoo: {
         color: '#e37e27',
         fontWeight: "500"
-      },
-      botaoFace: {
+    },
+    botaoFace: {
         color: 'blue',
-        
-      },
-      botaodont: {
+
+    },
+    botaodont: {
         marginRight: 10,
         marginBottom: 50
-      },
-      Caixa: {
+    },
+    Caixa: {
         display: 'flex',
         color: '#b0b0b0',
         backgroundColor: '#e0e0e0',
@@ -103,44 +116,43 @@ export default function HomeScreen() {
         height: 40,
         width: 340,
         margin: 5
-      },
-      LogarOutroMeio: {
+    },
+    LogarOutroMeio: {
         display: 'contents'
-      },
-      titulo: {
+    },
+    titulo: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center'
-      },
-      Smallcircle: {
+    },
+    Smallcircle: {
         display: 'flex',
         borderRadius: 80,
         backgroundColor: '#E1B0A8',
         height: 110,
         width: 110,
         marginRight: 80,
-      },
-      Bigcircle: {
+    },
+    Bigcircle: {
         display: 'flex',
         borderRadius: 100,
         backgroundColor: '#ECD6CB',
         height: 190,
         width: 190,
         marginLeft: 60
-      },
-      titulo2: {
+    },
+    titulo2: {
         fontFamily: "Times New Roman",
         fontWeight: '600',
         fontSize: 20,
-        color:"#e37e27"
-      },
-      halla: {
+        color: "#e37e27"
+    },
+    halla: {
         color: '#e37e27',
         fontSize: 20,
         fontFamily: 'Georgia'
-      }
-    
-    })
-    
-    
+    }
+
+})
+
