@@ -44,7 +44,7 @@ export default function HomeScreen() {
                 <View style={{ flexDirection: 'row', marginTop: 20 }}>
                     <Text style={styles.botaodont}>Do you have an account?</Text>
                     <TouchableOpacity>
-                        <Link href={'/home'} style={styles.botaoGoo}>Sign Up</Link>
+                        <Link href={'/'} style={styles.botaoGoo}>Sign Up</Link>
                     </TouchableOpacity>
 
                 </View>
