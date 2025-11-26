@@ -67,9 +67,9 @@ export default function HomeScreen() {
         <View style={styles.titulo}>
           <Text style={styles.titulo2} > Welcome!</Text>
         </View>
-        <TextInput style={styles.Caixa} placeholder="  Email" onChangeText={(value) => setEmail(value)}></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Password" secureTextEntry onChangeText={(value) => setPassword(value)}></TextInput>
-        <TextInput style={styles.Caixa} placeholder="  Confirm Password" secureTextEntry onChangeText={(value) => setConfirmPassword(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="Email" onChangeText={(value) => setEmail(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="Password" secureTextEntry onChangeText={(value) => setPassword(value)}></TextInput>
+        <TextInput style={styles.Caixa} placeholder="Confirm Password" secureTextEntry onChangeText={(value) => setConfirmPassword(value)}></TextInput>
 
         <TouchableOpacity style={styles.Botao} onPress={sigup}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -149,7 +149,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 40,
     width: 340,
-    margin: 5
+    margin: 5,
+    padding:10,
   },
   LogarOutroMeio: {
     display: 'contents'

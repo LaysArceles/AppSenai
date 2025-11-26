@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, router } from "expo-router";
 import Swal from "sweetalert2";
 
-export default function HomeScreen() {
+export default function HomeScreen(){
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const auth = getAuth(app)
@@ -37,7 +37,7 @@ export default function HomeScreen() {
 
                 <TouchableOpacity style={styles.botaoForgot}>
                     <View>
-                        <Link href = { '/home'} style={styles.Forgot}> Forgot Password ?</Link>
+                        <Link href = { '/'} style={styles.Forgot}> Forgot Password ?</Link>
                     </View>
                 </TouchableOpacity>
 

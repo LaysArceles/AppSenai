@@ -10,7 +10,11 @@ export default function HomeScreen() {
         <TouchableOpacity> 
             <Link href={'/pets'} style={styles.titulo2}> Register your pet </Link>
         </TouchableOpacity>
+        <TouchableOpacity> 
+            <Link href={'/listpets'} style={styles.titulo2}> Your pets </Link>
+        </TouchableOpacity>
     </View>
+    
 )}
 const styles = StyleSheet.create({
     texto: {
